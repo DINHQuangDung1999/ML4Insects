@@ -18,7 +18,6 @@ def hurst_dfa(ts,min_lag = 2,max_lag= 100):
     # Return the Hurst exponent from the polyfit output
     return m[0]
 
-
 def rescaled_range(ts):
     m = np.mean(ts)
     for i in range(len(ts)):
