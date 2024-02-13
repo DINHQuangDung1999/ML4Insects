@@ -1,15 +1,34 @@
 from easydict import EasyDict
+from copy import deepcopy as dc
 
-sliding_windows_configs = [EasyDict({'window_size': 1024, 'hop_length':128}),
-                           EasyDict({'window_size': 1024, 'hop_length':256}),
-                           EasyDict({'window_size': 1024, 'hop_length':1024})]
+config_dwt_Adam = EasyDict({'window_size': 1024, 'hop_length': 256, 'method': 'dwt', 'scale': True, 'outlier_filter': False, # Data specs
+                       'optimizer': 'Adam', 'n_epochs': 100, 'lr': 0.0001, 'batch_size': 256, #model specs
+                       'scope':4}) # Classifier specs
 
-MLP_lvl1_configs = [EasyDict({'device': 'cuda', 'n_classes': 7, 'num_epochs': 10, 'learning_rate': 0.0001,'batch_size': 128,'method':'fft','model_type':'mlp', 'seq_length': 513}),
-                    EasyDict({'device': 'cuda', 'n_classes': 7, 'num_epochs': 10, 'learning_rate': 0.0001,'batch_size': 128,'method':'raw','model_type':'mlp', 'seq_length': 1024}),
-                    EasyDict({'device': 'cuda', 'n_classes': 7, 'num_epochs': 15, 'learning_rate': 0.0001,'batch_size': 128,'method':'fft','model_type':'mlp', 'seq_length': 513}),
-                    EasyDict({'device': 'cuda', 'n_classes': 7, 'num_epochs': 15, 'learning_rate': 0.0001,'batch_size': 128,'method':'fft','model_type':'mlp', 'seq_length': 1024})]
+config_dwt_SGD = EasyDict({'window_size': 1024, 'hop_length': 256, 'method': 'dwt', 'scale': True, 'outlier_filter': False,# Data specs
+                       'optimizer': 'SGD', 'n_epochs': 100, 'lr': 0.0001, 'batch_size': 256, #model specs
+                       'scope':4}) # Classifier specs
 
-MLP_lvl2_configs = [EasyDict({'device': 'cuda', 'n_classes': 7, 'num_epochs': 10, 'learning_rate': 0.0001,'batch_size': 128,'method':'fft','model_type':'mlp', 'seq_length': 513}),
-                    EasyDict({'device': 'cuda', 'n_classes': 7, 'num_epochs': 10, 'learning_rate': 0.0001,'batch_size': 128,'method':'raw','model_type':'mlp', 'seq_length': 1024}),
-                    EasyDict({'device': 'cuda', 'n_classes': 7, 'num_epochs': 10, 'learning_rate': 0.0001,'batch_size': 128,'method':'fft','model_type':'mlp', 'seq_length': 513}),
-                    EasyDict({'device': 'cuda', 'n_classes': 7, 'num_epochs': 10, 'learning_rate': 0.0001,'batch_size': 128,'method':'raw','model_type':'mlp', 'seq_length': 1024}),]
+config_fft_Adam = EasyDict({'window_size': 1024, 'hop_length': 256, 'method': 'fft', 'scale': True, 'outlier_filter': False,# Data specs
+                       'optimizer': 'Adam', 'n_epochs': 100, 'lr': 0.0001, 'batch_size': 256, #model specs
+                       'scope':4}) # Classifier specs
+
+config_fft_SGD = EasyDict({'window_size': 1024, 'hop_length': 256, 'method': 'fft', 'scale': True, 'outlier_filter': False,# Data specs
+                       'optimizer': 'SGD', 'n_epochs': 100, 'lr': 0.0001, 'batch_size': 256, #model specs
+                       'scope':4}) # Classifier specs
+
+config_raw_Adam = EasyDict({'window_size': 1024, 'hop_length': 256, 'method': 'raw', 'scale': True, 'outlier_filter': False,
+                       'optimizer': 'Adam', 'n_epochs': 100, 'lr': 0.0001, 'batch_size': 256, #model specs
+                       'scope':4}) # Classifier specs
+
+config_raw_SGD = EasyDict({'window_size': 1024, 'hop_length': 256, 'method': 'raw', 'scale': True, 'outlier_filter': False,
+                       'optimizer': 'SGD', 'n_epochs': 100, 'lr': 0.0001, 'batch_size': 256, #model specs
+                       'scope':4}) # Classifier specs
+
+config_spec_img_Adam = EasyDict({'window_size': 1024, 'hop_length': 256, 'method': 'spec_img', 'scale': True, 'outlier_filter': False,
+                       'optimizer': 'Adam', 'n_epochs': 100, 'lr': 0.0001, 'batch_size': 256, #model specs
+                       'scope':4}) # Classifier specs
+
+config_spec_img_SGD = EasyDict({'window_size': 1024, 'hop_length': 256, 'method': 'spec_img', 'scale': True, 'outlier_filter': False,
+                       'optimizer': 'SGD', 'n_epochs': 100, 'lr': 0.0001, 'batch_size': 256, #model specs
+                       'scope':4}) # Classifier specs

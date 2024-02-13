@@ -2,6 +2,12 @@ import numpy as np
 import librosa
 import matplotlib.pyplot as plt
 import utils
+from plotly.subplots import make_subplots
+import plotly.graph_objects as go
+from plotly_resampler import FigureResampler, FigureWidgetResampler
+
+from copy import deepcopy as dc
+
 """
 VISUALIZATION FUNCTION
 """
@@ -18,10 +24,13 @@ c={'np':np.random.rand(3),
     'f':np.random.rand(3),
     'pd':np.random.rand(3)}
 
-def color_dict():
-    return c 
-
-def visualize_wave(wave_array, ana, wave_type = 'whole', n_plots = None,sr = 100):
+def get_position_label(wave_indices, position):
+    for wave_type in wave_indices:
+        for start, end in wave_indices[wave_type]:
+            if (start <= position) & (position <= end):
+                return wave_type
+            
+def visualize_wave(wave_array, ana_file, wave_type = 'whole', n_plots = None,sr = 100, in_between = False):
     '''
     Input:
         :param wave_array: wave signal of class np.ndarray
@@ -32,19 +41,16 @@ def visualize_wave(wave_array, ana, wave_type = 'whole', n_plots = None,sr = 100
     Output:
         plot of the full wave (wave types) with colors
     '''    
-
-    if isinstance(ana,dict):
-        wave_indices = ana
-    else:
-        wave_indices = utils.get_index(ana)
-
     np.random.seed(28)
-    c=color_dict()
+    c={'np':np.random.rand(3),    'c':np.random.rand(3),    'e1':np.random.rand(3),    'e2':np.random.rand(3),    'g':np.random.rand(3),    'f':np.random.rand(3),    'pd':np.random.rand(3)}
     time = np.linspace(0,len(wave_array)/sr,len(wave_array))
+
+    ana = dc(ana_file)
+    ana.loc[:,'time'] = ana.loc[:,'time'].apply(lambda x: int(x*100))
+    wave_indices = utils.get_index(ana)
 
     if wave_type == 'whole':
 
-        plt.figure(figsize=(16,2))
         custom_legends = []
         i = 0
         for wave in wave_indices.keys():
@@ -53,8 +59,8 @@ def visualize_wave(wave_array, ana, wave_type = 'whole', n_plots = None,sr = 100
             custom_legends.append(Line2D([0], [0], color=c[wave], lw=4))
             i+=1
 
-        plt.legend(custom_legends,wave_indices.keys(),loc = 'upper center',ncols=len(custom_legends))
-        plt.xticks(np.arange(0,time.max(),2000),rotation = 45)
+        plt.legend(custom_legends,wave_indices.keys(),loc = 'best',ncols=len(custom_legends))
+        plt.xticks(np.arange(0,time.max(),2000), labels=np.arange(0,time.max(),2000), rotation = 45)
         plt.xlabel(f'Time (s). Sampling rate: {sr} (Hz)')
         plt.ylabel('Amplitude (V)')
 
@@ -63,11 +69,59 @@ def visualize_wave(wave_array, ana, wave_type = 'whole', n_plots = None,sr = 100
             n_plots = len(wave_indices[wave_type])
 
         f,ax = plt.subplots(n_plots,1,figsize=(16,2*n_plots))
+        try:
+            iter(ax)
+        except:
+            ax = [ax]
         for i in range(n_plots):
             start, end = wave_indices[wave_type][i]
-            ax[i].plot(time[start:end],wave_array[start:end],color = c[wave_type])
+            # pad the wave with adjacent waveform to see the relationship
+            ax[i].plot(time[start:end],wave_array[start:end],
+                       color = c[wave_type], label = wave_type)
+            if in_between == True:
+                start_pad = start - 1000
+                end_pad = end + 1000
+                former_label = get_position_label(wave_indices,start_pad)
+                latter_label = get_position_label(wave_indices,end_pad)
+                if former_label != None:
+                    ax[i].plot(time[start_pad:start],wave_array[start_pad:start],
+                            color = c[former_label],label = former_label)
+
+                if latter_label != None:
+                    ax[i].plot(time[end:end_pad],wave_array[end:end_pad],
+                            color = c[latter_label], label = latter_label)
+        ax[i].legend()
         ax[i].set_xlabel(f'Time (s). Sampling rate {sr} (Hz)')
+
         plt.suptitle(f'{n_plots} sample plots of {wave_type} wave')
+
+### Interactive
+def interactive_visualization(wave_array, ana_file, smoothen = False, sr = 100, title = ''):
+    c={'np':'darkgoldenrod',    'c':'lightgreen',    'e1':'skyblue',    'e2':'deeppink',    'g':'darkblue',    'f':'crimson',    'pd':'olive'}
+    time = np.linspace(0,len(wave_array)/sr,len(wave_array))
+    ana = dc(ana_file)
+    ana.loc[:,'time'] = ana.loc[:,'time'].apply(lambda x: int(x*100))
+    wave_indices = utils.get_index(ana)
+
+    if smoothen == True:
+        fig = FigureWidgetResampler(go.Figure())
+    elif smoothen == False:
+        fig = go.Figure()
+
+    for wave in wave_indices.keys():
+        i = 0
+        for start,end in wave_indices[wave]:
+            if i == 0:
+                fig.add_trace(go.Scatter(x = time[start:end], y = wave_array[start:end],line=dict(color=c[wave]),mode = 'lines',
+                                        legendgroup = wave, name = wave))   
+            else:
+                fig.add_trace(go.Scatter(x = time[start:end], y = wave_array[start:end],line=dict(color=c[wave]),mode = 'lines',
+                                        legendgroup = wave, name = wave, showlegend = False))  
+            i+=1
+    fig.update_layout(title_text= f"{title} Interative viewer")
+    fig.update_layout( xaxis=dict( rangeslider=dict(visible=True), type="linear" ) )# Add range slider
+    fig.show()
+
 
 from scipy.signal import find_peaks
 def visualize_fft_coefficients(wave_array, ana, sr = 100, wave_type: str = None, which = 0, 
