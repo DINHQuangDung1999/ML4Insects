@@ -1,0 +1,287 @@
+======================================================================================
+Date: 2024-02-08 14:06:26 | Description: LogisticRegression
+===> CV result 
+fit_time: 153.57 +- 11.37
+score_time: 0.08 +- 0.01
+test_accuracy: 0.76 +- 0.03
+test_balanced_accuracy: 0.39 +- 0.07
+test_f1_weighted: 0.71 +- 0.03
+test_precision_weighted: 0.71 +- 0.04
+test_recall_weighted: 0.76 +- 0.03
+====> Test result 
+Acc: 0.659    Balanced_acc: 0.354    f1: 0.592    precision: 0.586    recall: 0.659    ======================================================================================
+Date: 2024-02-08 14:08:13 | Description: DecisionTreeClassifier
+===> CV result 
+fit_time: 103.51 +- 2.04
+score_time: 0.09 +- 0.02
+test_accuracy: 0.71 +- 0.03
+test_balanced_accuracy: 0.51 +- 0.05
+test_f1_weighted: 0.72 +- 0.03
+test_precision_weighted: 0.73 +- 0.02
+test_recall_weighted: 0.71 +- 0.03
+====> Test result 
+Acc: 0.329    Balanced_acc: 0.334    f1: 0.361    precision: 0.501    recall: 0.329    ======================================================================================
+Date: 2024-02-12 12:05:41 | Description: LogisticRegression
+===> CV result 
+fit_time: 57.61 +- 7.06
+score_time: 0.12 +- 0.02
+test_accuracy: 0.71 +- 0.02
+test_balanced_accuracy: 0.29 +- 0.03
+test_f1_weighted: 0.64 +- 0.02
+test_precision_weighted: 0.62 +- 0.02
+test_recall_weighted: 0.71 +- 0.02
+====> Test result 
+Acc: 0.645    Balanced_acc: 0.295    f1: 0.569    precision: 0.57    recall: 0.645    ======================================================================================
+Date: 2024-02-12 12:06:25 | Description: DecisionTreeClassifier
+===> CV result 
+fit_time: 42.08 +- 0.62
+score_time: 0.09 +- 0.01
+test_accuracy: 0.67 +- 0.06
+test_balanced_accuracy: 0.45 +- 0.05
+test_f1_weighted: 0.68 +- 0.05
+test_precision_weighted: 0.71 +- 0.03
+test_recall_weighted: 0.67 +- 0.06
+====> Test result 
+Acc: 0.329    Balanced_acc: 0.21    f1: 0.354    precision: 0.471    recall: 0.329    ======================================================================================
+Date: 2024-02-12 12:23:18 | Description: LogisticRegression
+===> CV result 
+fit_time: 47.12 +- 5.91
+score_time: 0.09 +- 0.02
+test_accuracy: 0.71 +- 0.02
+test_balanced_accuracy: 0.29 +- 0.03
+test_f1_weighted: 0.64 +- 0.02
+test_precision_weighted: 0.62 +- 0.02
+test_recall_weighted: 0.71 +- 0.02
+====> Test result 
+Acc: 0.645    Balanced_acc: 0.295    f1: 0.569    precision: 0.57    recall: 0.645    ======================================================================================
+Date: 2024-02-12 12:23:52 | Description: DecisionTreeClassifier
+===> CV result 
+fit_time: 32.3 +- 0.54
+score_time: 0.08 +- 0.01
+test_accuracy: 0.67 +- 0.06
+test_balanced_accuracy: 0.45 +- 0.05
+test_f1_weighted: 0.68 +- 0.05
+test_precision_weighted: 0.71 +- 0.03
+test_recall_weighted: 0.67 +- 0.06
+====> Test result 
+Acc: 0.329    Balanced_acc: 0.21    f1: 0.354    precision: 0.471    recall: 0.329    ======================================================================================
+Date: 2024-02-12 12:36:00 | Description: HistGradientBoostingClassifier
+===> CV result 
+fit_time: 79.11 +- 6.02
+score_time: 5.34 +- 0.17
+test_accuracy: 0.67 +- 0.08
+test_balanced_accuracy: 0.56 +- 0.09
+test_f1_weighted: 0.69 +- 0.07
+test_precision_weighted: 0.75 +- 0.03
+test_recall_weighted: 0.67 +- 0.08
+====> Test result 
+Acc: 0.317    Balanced_acc: 0.247    f1: 0.342    precision: 0.577    recall: 0.317    ======================================================================================
+Date: 2024-02-12 12:37:55 | Description: AdaBoostClassifier
+===> CV result 
+fit_time: 108.66 +- 0.75
+score_time: 2.5 +- 0.29
+test_accuracy: 0.72 +- 0.04
+test_balanced_accuracy: 0.35 +- 0.03
+test_f1_weighted: 0.68 +- 0.02
+test_precision_weighted: 0.67 +- 0.02
+test_recall_weighted: 0.72 +- 0.04
+====> Test result 
+Acc: 0.573    Balanced_acc: 0.342    f1: 0.552    precision: 0.579    recall: 0.573    ======================================================================================
+Date: 2024-02-12 12:39:29 | Description: XGBClassifier
+===> CV result 
+fit_time: 90.05 +- 0.48
+score_time: 1.84 +- 0.17
+test_accuracy: 0.74 +- 0.07
+test_balanced_accuracy: 0.52 +- 0.08
+test_f1_weighted: 0.74 +- 0.06
+test_precision_weighted: 0.76 +- 0.04
+test_recall_weighted: 0.74 +- 0.07
+====> Test result 
+Acc: 0.393    Balanced_acc: 0.244    f1: 0.394    precision: 0.564    recall: 0.393    ======================================================================================
+Date: 2024-02-12 12:40:30 | Description: LGBMClassifier
+===> CV result 
+fit_time: 55.38 +- 1.83
+score_time: 1.74 +- 0.07
+test_accuracy: 0.67 +- 0.08
+test_balanced_accuracy: 0.56 +- 0.09
+test_f1_weighted: 0.69 +- 0.07
+test_precision_weighted: 0.75 +- 0.03
+test_recall_weighted: 0.67 +- 0.08
+====> Test result 
+Acc: 0.316    Balanced_acc: 0.239    f1: 0.339    precision: 0.577    recall: 0.316    ======================================================================================
+Date: 2024-02-12 13:14:27 | Description: HistGradientBoostingClassifier
+===> CV result 
+fit_time: 120.69 +- 1.16
+score_time: 6.8 +- 0.31
+test_accuracy: 0.69 +- 0.08
+test_balanced_accuracy: 0.61 +- 0.09
+test_f1_weighted: 0.72 +- 0.07
+test_precision_weighted: 0.77 +- 0.04
+test_recall_weighted: 0.69 +- 0.08
+====> Test result 
+Acc: 0.545    Balanced_acc: 0.356    f1: 0.546    precision: 0.59    recall: 0.545    ======================================================================================
+Date: 2024-02-12 13:19:04 | Description: AdaBoostClassifier
+===> CV result 
+fit_time: 270.72 +- 0.88
+score_time: 2.1 +- 0.24
+test_accuracy: 0.73 +- 0.03
+test_balanced_accuracy: 0.4 +- 0.04
+test_f1_weighted: 0.7 +- 0.02
+test_precision_weighted: 0.69 +- 0.03
+test_recall_weighted: 0.73 +- 0.03
+====> Test result 
+Acc: 0.647    Balanced_acc: 0.395    f1: 0.602    precision: 0.597    recall: 0.647    ======================================================================================
+Date: 2024-02-12 13:20:42 | Description: XGBClassifier
+===> CV result 
+fit_time: 94.44 +- 0.61
+score_time: 1.58 +- 0.21
+test_accuracy: 0.77 +- 0.07
+test_balanced_accuracy: 0.57 +- 0.09
+test_f1_weighted: 0.77 +- 0.06
+test_precision_weighted: 0.78 +- 0.05
+test_recall_weighted: 0.77 +- 0.07
+====> Test result 
+Acc: 0.542    Balanced_acc: 0.322    f1: 0.531    precision: 0.565    recall: 0.542    ======================================================================================
+Date: 2024-02-12 13:21:58 | Description: LGBMClassifier
+===> CV result 
+fit_time: 69.96 +- 1.88
+score_time: 1.49 +- 0.21
+test_accuracy: 0.7 +- 0.09
+test_balanced_accuracy: 0.61 +- 0.1
+test_f1_weighted: 0.72 +- 0.07
+test_precision_weighted: 0.77 +- 0.04
+test_recall_weighted: 0.7 +- 0.09
+====> Test result 
+Acc: 0.541    Balanced_acc: 0.357    f1: 0.543    precision: 0.584    recall: 0.541    ======================================================================================
+Date: 2024-02-12 14:05:27 | Description: HistGradientBoostingClassifier
+===> CV result 
+fit_time: 92.8 +- 1.08
+score_time: 6.31 +- 0.22
+test_accuracy: 0.69 +- 0.07
+test_balanced_accuracy: 0.63 +- 0.08
+test_f1_weighted: 0.71 +- 0.06
+test_precision_weighted: 0.78 +- 0.03
+test_recall_weighted: 0.69 +- 0.07
+====> Test result 
+Acc: 0.47    Balanced_acc: 0.331    f1: 0.478    precision: 0.616    recall: 0.47    ======================================================================================
+Date: 2024-02-12 14:08:21 | Description: AdaBoostClassifier
+===> CV result 
+fit_time: 168.16 +- 0.61
+score_time: 2.45 +- 0.31
+test_accuracy: 0.73 +- 0.03
+test_balanced_accuracy: 0.42 +- 0.04
+test_f1_weighted: 0.7 +- 0.02
+test_precision_weighted: 0.72 +- 0.02
+test_recall_weighted: 0.73 +- 0.03
+====> Test result 
+Acc: 0.658    Balanced_acc: 0.423    f1: 0.602    precision: 0.624    recall: 0.658    ======================================================================================
+Date: 2024-02-12 14:09:55 | Description: XGBClassifier
+===> CV result 
+fit_time: 88.7 +- 0.28
+score_time: 1.62 +- 0.05
+test_accuracy: 0.75 +- 0.06
+test_balanced_accuracy: 0.59 +- 0.07
+test_f1_weighted: 0.76 +- 0.05
+test_precision_weighted: 0.78 +- 0.03
+test_recall_weighted: 0.75 +- 0.06
+====> Test result 
+Acc: 0.51    Balanced_acc: 0.3    f1: 0.483    precision: 0.631    recall: 0.51    ======================================================================================
+Date: 2024-02-12 14:11:04 | Description: LGBMClassifier
+===> CV result 
+fit_time: 61.9 +- 2.15
+score_time: 1.88 +- 0.13
+test_accuracy: 0.69 +- 0.07
+test_balanced_accuracy: 0.62 +- 0.08
+test_f1_weighted: 0.71 +- 0.06
+test_precision_weighted: 0.78 +- 0.03
+test_recall_weighted: 0.69 +- 0.07
+====> Test result 
+Acc: 0.467    Balanced_acc: 0.324    f1: 0.47    precision: 0.623    recall: 0.467    ======================================================================================
+Date: 2024-02-12 14:52:12 | Description: HistGradientBoostingClassifier
+===> CV result 
+fit_time: 96.9 +- 0.77
+score_time: 6.25 +- 0.14
+test_accuracy: 0.69 +- 0.07
+test_balanced_accuracy: 0.63 +- 0.08
+test_f1_weighted: 0.72 +- 0.06
+test_precision_weighted: 0.78 +- 0.03
+test_recall_weighted: 0.69 +- 0.07
+====> Test result 
+Acc: 0.611    Balanced_acc: 0.622    f1: 0.641    precision: 0.755    recall: 0.611    ======================================================================================
+Date: 2024-02-12 14:55:01 | Description: AdaBoostClassifier
+===> CV result 
+fit_time: 162.86 +- 0.68
+score_time: 2.21 +- 0.25
+test_accuracy: 0.72 +- 0.03
+test_balanced_accuracy: 0.4 +- 0.04
+test_f1_weighted: 0.69 +- 0.02
+test_precision_weighted: 0.69 +- 0.02
+test_recall_weighted: 0.72 +- 0.03
+====> Test result 
+Acc: 0.642    Balanced_acc: 0.403    f1: 0.589    precision: 0.621    recall: 0.642    ======================================================================================
+Date: 2024-02-12 14:56:33 | Description: XGBClassifier
+===> CV result 
+fit_time: 88.71 +- 0.27
+score_time: 1.68 +- 0.06
+test_accuracy: 0.75 +- 0.06
+test_balanced_accuracy: 0.59 +- 0.07
+test_f1_weighted: 0.76 +- 0.05
+test_precision_weighted: 0.78 +- 0.03
+test_recall_weighted: 0.75 +- 0.06
+====> Test result 
+Acc: 0.732    Balanced_acc: 0.626    f1: 0.739    precision: 0.779    recall: 0.732    ======================================================================================
+Date: 2024-02-12 14:57:44 | Description: LGBMClassifier
+===> CV result 
+fit_time: 64.76 +- 1.87
+score_time: 1.92 +- 0.41
+test_accuracy: 0.69 +- 0.07
+test_balanced_accuracy: 0.63 +- 0.08
+test_f1_weighted: 0.71 +- 0.06
+test_precision_weighted: 0.78 +- 0.03
+test_recall_weighted: 0.69 +- 0.07
+====> Test result 
+Acc: 0.614    Balanced_acc: 0.627    f1: 0.645    precision: 0.76    recall: 0.614    ======================================================================================
+Date: 2024-02-12 15:04:45 | Description: HistGradientBoostingClassifier
+===> CV result 
+fit_time: 89.22 +- 5.02
+score_time: 5.57 +- 0.09
+test_accuracy: 0.69 +- 0.07
+test_balanced_accuracy: 0.63 +- 0.08
+test_f1_weighted: 0.71 +- 0.06
+test_precision_weighted: 0.78 +- 0.03
+test_recall_weighted: 0.69 +- 0.07
+====> Test result 
+Acc: 0.104    Balanced_acc: 0.143    f1: 0.02    precision: 0.109    recall: 0.104    ======================================================================================
+Date: 2024-02-12 15:06:43 | Description: AdaBoostClassifier
+===> CV result 
+fit_time: 112.49 +- 0.69
+score_time: 2.42 +- 0.29
+test_accuracy: 0.74 +- 0.02
+test_balanced_accuracy: 0.42 +- 0.03
+test_f1_weighted: 0.7 +- 0.01
+test_precision_weighted: 0.71 +- 0.01
+test_recall_weighted: 0.74 +- 0.02
+====> Test result 
+Acc: 0.104    Balanced_acc: 0.143    f1: 0.02    precision: 0.011    recall: 0.104    ======================================================================================
+Date: 2024-02-12 15:08:20 | Description: XGBClassifier
+===> CV result 
+fit_time: 94.18 +- 0.21
+score_time: 1.57 +- 0.06
+test_accuracy: 0.75 +- 0.06
+test_balanced_accuracy: 0.59 +- 0.07
+test_f1_weighted: 0.76 +- 0.05
+test_precision_weighted: 0.78 +- 0.03
+test_recall_weighted: 0.75 +- 0.06
+====> Test result 
+Acc: 0.103    Balanced_acc: 0.143    f1: 0.02    precision: 0.11    recall: 0.103    ======================================================================================
+Date: 2024-02-12 15:10:52 | Description: HistGradientBoostingClassifier
+===> CV result 
+fit_time: 98.27 +- 4.39
+score_time: 6.33 +- 0.2
+test_accuracy: 0.69 +- 0.07
+test_balanced_accuracy: 0.63 +- 0.08
+test_f1_weighted: 0.71 +- 0.06
+test_precision_weighted: 0.78 +- 0.03
+test_recall_weighted: 0.69 +- 0.07
+====> Test result 
+Acc: 0.154    Balanced_acc: 0.295    f1: 0.068    precision: 0.466    recall: 0.154    
