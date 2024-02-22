@@ -13,7 +13,6 @@ from easydict import EasyDict
 import datetime 
 import os
 
-# ======================= MODEL ===========================
 class MLTrainer():
     def __init__(self, clf):
         self.model = clf
@@ -77,56 +76,6 @@ class MLTrainer():
                         )
             f.writelines([f'====> Test result \n'] + [f"{s}: {self.results_['test_scores'][s]}    " for s in self.results_['test_scores'].keys()])  
             f.writelines(f'Class accuracy: {self.results_["class_acc"]}\n')  
-
-    # def plot_result(self, savefig = True, name = ''):
-    #     # Learning curves
-    #     train_loss = self.result['training_loss']
-    #     val_loss = self.result['validation_loss']
-    #     val_acc = self.result['validation_accuracy']
-
-    #     # test scores
-    #     test_score = self.result['test_score']
-    #     scores = list(self.result['test_score'].keys())
-        
-    #     # Confusion matrices
-    #     cf = dc(self.result['test_confusion_matrix'])
-    #     cf = cf.astype(float)
-    #     n_preds = np.sum(cf, axis = 0)
-    #     for col in range(cf.shape[0]):
-    #         for row in range(cf.shape[0]):
-    #             try:
-    #                 cf[row, col] = round(cf[row, col]/n_preds[col],2)
-    #             except:
-    #                 cf[row, col] = 0
-
-    #     f, ax = plt.subplots(1,3,figsize = (12,4))
-    #     ax[0].plot(train_loss,'r',label = 'train loss')
-    #     ax[0].plot(val_loss,'b', label = 'validation_loss')
-    #     ax[0].plot(val_acc,'b--', label = 'validation_accuracy')
-    #     ax[0].set_xlabel('Epoch')
-    #     ax[0].set_title('Traininng loss and validation accuracy')
-    #     ax[0].grid()
-    #     ax[0].legend()
-
-    #     w = 0.3
-    #     h = [test_score[k][0] for k in scores]
-    #     plt.bar
-    #     ax[1].bar(np.arange(len(scores)), h, width = w)
-    #     ax[1].set_xticks(np.arange(len(scores)),scores)
-    #     ax[1].set_title('Test accuracy and macro scores')
-    #     ax[1].set_ylim(0,1)
-
-    #     sns.heatmap(cf, ax = ax[2], annot= True, cmap = 'YlGn')
-    #     ax[2].set_title('Confusion matrix')     
-    #     ax[2].xaxis.set_ticklabels(list(utils.reverse_labels_dict.values()))
-    #     ax[2].yaxis.set_ticklabels(list(utils.reverse_labels_dict.values()))
-    #     plt.tight_layout()
-    #     # if savefig == True:
-    #     #     if not os.path.exists('log'):
-    #     #         os.makedirs('log')
-    #     #     d = str(datetime.date.today())
-    #     #     p = os.path.join(os.getcwd(), 'log', f'{self.model.__type__}_{d}_{name}')
-    #     #     plt.savefig(p)
     
 def save(model,path):
     # save the model to disk
